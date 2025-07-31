@@ -46,10 +46,10 @@ xvfb-run -a -- ./lib4bin -p -v -e -s -k \
 
 # include lsfg-vk
 if [ "$ARCH" = "x86_64" ]; then
-    wget --retry-connrefused --tries=30 "https://pancake.gay/lsfg-vk/lsfg-vk_archlinux.zip"
-    unzip -o ./lsfg-vk_archlinux.zip
+    wget --retry-connrefused --tries=30 "https://github.com/PancakeTAS/lsfg-vk/releases/download/v1.0.0/lsfg-vk-1.0.0-x86_64.zip"
+    unzip -o ./lsfg-vk-1.0.0-x86_64.zip
     sed -i 's|../../../lib/||' ./share/vulkan/implicit_layer.d/VkLayer_LS_frame_generation.json
-    rm -f ./lsfg-vk_archlinux.zip
+    rm -f ./lsfg-vk-1.0.0-x86_64.zip
 fi
 ln -fv ./sharun ./AppRun
 ./sharun -g
