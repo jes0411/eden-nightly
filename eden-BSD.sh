@@ -11,6 +11,9 @@ COUNT="$(git rev-list --count HEAD)"
 # hook the updater to check my repo
 git apply ../patches/update.patch
 
+# ffmpeg fix
+sed -i '' 's/ make / gmake /g' externals/ffmpeg/CMakeFiles/ffmpeg-build.dir/build.make
+
 mkdir -p build
 cd build
 cmake .. -GNinja \
