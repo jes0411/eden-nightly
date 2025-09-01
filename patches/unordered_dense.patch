@@ -36,9 +36,6 @@ index bbc6b056c1..49f8379304 100644
 +        "options": [
 +            "UNORDERED_DENSE_INSTALL OFF"
 +        ],
-+        "patches": [
-+            "0001-cmake.patch"
-+        ]
 +    },
      "oaknut": {
          "version": "2.0.1",
