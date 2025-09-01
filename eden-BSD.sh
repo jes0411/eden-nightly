@@ -13,7 +13,7 @@ git apply ../patches/update.patch
 
 if [ "$OS" = "Solaris" ]; then
     git apply ../patches/unordered_dense.patch
-    QT6_DIR="/usr/lib/cmake/Qt6"
+    QT6_DIR="$(find /usr -name Qt6Config.cmake 2>/dev/null | head -n1 | xargs dirname)"
 elif [ "$OS" = "FreeBSD" ]; then
     QT6_DIR="/usr/local/lib/cmake/Qt6"
 fi
