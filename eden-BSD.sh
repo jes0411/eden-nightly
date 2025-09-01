@@ -11,9 +11,6 @@ COUNT="$(git rev-list --count HEAD)"
 # hook the updater to check my repo
 git apply ../patches/update.patch
 
-# ffmpeg fix
-sed -i '' 's/ make / gmake /g' externals/ffmpeg/CMakeFiles/ffmpeg-build.dir/build.make
-
 mkdir -p build
 cd build
 cmake .. -GNinja \
@@ -34,6 +31,7 @@ cmake .. -GNinja \
     -DCMAKE_CXX_FLAGS="-w" \
     -DCMAKE_C_COMPILER_LAUNCHER=ccache \
     -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+    -DCMAKE_MAKE_PROGRAM=gmake \
     -DQt6_DIR=/usr/local/lib/cmake/Qt6
 ninja
 ccache -s-v
