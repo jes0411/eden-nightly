@@ -508,11 +508,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        include:
-          - target: FreeBSD
-            action: vmactions/freebsd-vm@v1.2.3
-          - target: Solaris
-            action: vmactions/solaris-vm@v1.1.5
+        target: [FreeBSD, Solaris]
     continue-on-error: true
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
@@ -550,7 +546,18 @@ jobs:
           restore-keys: ${{ matrix.target }}-ccache-
 
       - name: Compile Eden ${{ matrix.target }}
-        uses: ${{ matrix.action }}
+        if: matrix.target == 'FreeBSD'
+        uses: vmactions/freebsd-vm@v1.2.3
+        with:
+          usesh: true
+          envs: 'CCACHE_DIR OS'
+          run: |
+            chmod +x ./BSD-dependencies.sh ./eden-BSD.sh
+            ./BSD-dependencies.sh && ./eden-BSD.sh
+
+      - name: Compile Eden ${{ matrix.target }}
+        if: matrix.target == 'Solaris'
+        uses: vmactions/solaris-vm@v1.1.5
         with:
           usesh: true
           envs: 'CCACHE_DIR OS'
