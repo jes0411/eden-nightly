@@ -11,8 +11,12 @@ COUNT="$(git rev-list --count HEAD)"
 # hook the updater to check my repo
 git apply ../patches/update.patch
 
-git apply ../patches/unordered_dense.patch
-
+if [ "$OS" = "Solaris" ]; then
+    git apply ../patches/unordered_dense.patch
+    QT6_DIR="/usr/lib/cmake/Qt6"
+elif [ "$OS" = "FreeBSD" ]; then
+    QT6_DIR="/usr/local/lib/cmake/Qt6"
+fi
 mkdir -p build
 cd build
 cmake .. -GNinja \
@@ -31,7 +35,7 @@ cmake .. -GNinja \
     -DCMAKE_CXX_FLAGS="-w" \
     -DCMAKE_C_COMPILER_LAUNCHER=ccache \
     -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
-    -DQt6_DIR=/usr/local/lib/cmake/Qt6
+    -DQt6_DIR="$QT6_DIR"
 ninja
 ccache -s-v
 
