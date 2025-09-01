@@ -34,7 +34,7 @@ cmake .. -GNinja \
 ninja
 ccache -s-v
 
-PKG_NAME="Eden-${COUNT}-FreeBSD-${ARCH}"
+PKG_NAME="Eden-${COUNT}-${OS}-${ARCH}"
 PKG_DIR="${PKG_NAME}/usr/local"
 EDEN_PATH="${PKG_DIR}/bin/eden"
 
@@ -96,7 +96,7 @@ find "${PKG_DIR}/lib" -type f -name '*.so*' -exec strip {} \;
 # Create a laucher for the pack
 cat > "${PKG_NAME}/launch.sh" <<EOF
 #!/bin/sh
-# Eden Launcher for FreeBSD
+# Eden Launcher for "${OS}"
 
 DIR=\$(dirname "\$0")/usr/local
 
