@@ -11,6 +11,8 @@ COUNT="$(git rev-list --count HEAD)"
 # hook the updater to check my repo
 git apply ../patches/update.patch
 
+git apply ../patches/unordered_dense.patch
+
 mkdir -p build
 cd build
 cmake .. -GNinja \
