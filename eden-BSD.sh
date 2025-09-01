@@ -18,7 +18,6 @@ cmake .. -GNinja \
     -DYUZU_USE_FASTER_LD=ON \
     -DYUZU_ENABLE_LTO=ON \
     -DYUZU_USE_BUNDLED_QT=OFF \
-    -DYUZU_USE_BUNDLED_FFMPEG=ON \
     -DYUZU_USE_EXTERNAL_VULKAN_UTILITY_LIBRARIES=ON \
     -DYUZU_USE_EXTERNAL_VULKAN_HEADERS=ON \
     -DENABLE_QT_TRANSLATION=ON \
@@ -31,7 +30,6 @@ cmake .. -GNinja \
     -DCMAKE_CXX_FLAGS="-w" \
     -DCMAKE_C_COMPILER_LAUNCHER=ccache \
     -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
-    -DCMAKE_MAKE_PROGRAM=gmake \
     -DQt6_DIR=/usr/local/lib/cmake/Qt6
 ninja
 ccache -s-v
