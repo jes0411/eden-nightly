@@ -1,5 +1,5 @@
 diff --git a/externals/CMakeLists.txt b/externals/CMakeLists.txt
-index f66423a672..cbbca4446b 100644
+index f66423a672..e917e4e7d8 100644
 --- a/externals/CMakeLists.txt
 +++ b/externals/CMakeLists.txt
 @@ -96,15 +96,7 @@ if (ENABLE_WEB_SERVICE)
@@ -15,7 +15,7 @@ index f66423a672..cbbca4446b 100644
 -    OPTIONS
 -        "UNORDERED_DENSE_INSTALL OFF"
 -)
-+AddJsonPackage(unordered_dense)
++AddJsonPackage(unordered-dense)
  
  # FFMpeg
  if (YUZU_USE_BUNDLED_FFMPEG)
