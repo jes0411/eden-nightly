@@ -10,7 +10,7 @@ case "$OS" in
     ;;
   Solaris)
     pkg update && sudo pkg install git cmake developer/gcc-14
-    pkg install qt6 boost glslang libzip library/lz4 nlohmann-json openssl opus sdl2 zlib compress/zstd unzip pkg-config nasm autoconf mesa library/libdrm header-drm developer/fmt
+    pkg install qt6 libzip openssl zlib compress/zstd unzip pkg-config nasm autoconf mesa library/libdrm
     ;;
   *)
     echo "Unsupported OS: $OS"
