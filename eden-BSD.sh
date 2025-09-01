@@ -2,7 +2,7 @@
 
 set -ex
 
-export ARCH="$(uname -m)"
+export ARCH="amd64"
 
 cd ./eden
 git config --global --add safe.directory .
@@ -25,7 +25,6 @@ cmake .. -GNinja \
     -DUSE_DISCORD_PRESENCE=OFF \
     -DYUZU_CMD=OFF \
     -DYUZU_ROOM_STANDALONE=OFF \
-    -DCMAKE_SYSTEM_PROCESSOR="$(uname -m)" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_CXX_FLAGS="-w" \
     -DCMAKE_C_COMPILER_LAUNCHER=ccache \
