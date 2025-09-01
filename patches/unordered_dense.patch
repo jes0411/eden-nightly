@@ -20,10 +20,10 @@ index f66423a672..e917e4e7d8 100644
  # FFMpeg
  if (YUZU_USE_BUNDLED_FFMPEG)
 diff --git a/externals/cpmfile.json b/externals/cpmfile.json
-index bbc6b056c1..49f8379304 100644
+index bbc6b056c1..e3ce8ad18b 100644
 --- a/externals/cpmfile.json
 +++ b/externals/cpmfile.json
-@@ -86,6 +86,19 @@
+@@ -86,6 +86,16 @@
          "hash": "5824e92159e07fa36a774aedd3b3ef3541d0241371d522cffa4ab3e1f215fa5097b1b77865b47b2481376c704fa079875557ea463ca63d0a7fd6a8a20a589e70",
          "bundled": true
      },
