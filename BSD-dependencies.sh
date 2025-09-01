@@ -9,7 +9,6 @@ case "$OS" in
                 ninja pkgconf qt6-base qt6ct qt6-tools qt6-translations qt6-wayland sdl2 unzip vulkan-tools vulkan-loader wget zip
     ;;
   Solaris)
-    pkg update 
     pkg install git cmake developer/gcc-14
     pkg install qt6 libzip openssl zlib compress/zstd unzip pkg-config nasm autoconf mesa library/libdrm
     ;;
